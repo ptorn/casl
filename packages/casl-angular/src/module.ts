@@ -1,10 +1,10 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Ability } from '@casl/ability';
+import { __decorate as d, __metadata as m } from 'tslib/tslib.es6'; // eslint-disable-line
 import { CanPipe } from './can';
-import { __decorate as d, __metadata as m } from 'tslib/tslib.es6';
 
-const __decorate = d;
-const __metadata = m;
+const __decorate = d; // eslint-disable-line
+const __metadata = m; // eslint-disable-line
 
 export function createAbility() {
   return new Ability([]);
