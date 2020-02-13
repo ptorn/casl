@@ -46,7 +46,7 @@ describe('Ability', () => {
 
     it('updates template when `ability` is updated', () => {
       fixture = createComponent(App, { post })
-      ability.update([{ subject: Post.name, actions: 'read' }])
+      ability.update([{ subject: Post.name, action: 'read' }])
       fixture.detectChanges()
 
       expect(fixture.nativeElement.textContent).to.equal('true')
@@ -54,7 +54,7 @@ describe('Ability', () => {
 
     describe('when abilities depends on object attribute', () => {
       beforeEach(() => {
-        ability.update([{ subject: Post.name, actions: 'read', conditions: { author: 'me' } }])
+        ability.update([{ subject: Post.name, action: 'read', conditions: { author: 'me' } }])
         fixture = createComponent(App, { post })
         fixture.detectChanges()
       })

@@ -1,14 +1,10 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { Ability } from '@casl/ability';
+import { Ability, Subject } from '@casl/ability';
 import { __decorate as d, __metadata as m } from 'tslib/tslib.es6'; // eslint-disable-line
 import { CanPipe } from './can';
 
 const __decorate = d; // eslint-disable-line
 const __metadata = m; // eslint-disable-line
-
-export function createAbility() {
-  return new Ability([]);
-}
 
 @NgModule({
   declarations: [
@@ -19,11 +15,18 @@ export function createAbility() {
   ],
 })
 export class AbilityModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot<
+    Actions extends string,
+    Subjects extends Subject,
+    Conditions
+  >(): ModuleWithProviders {
     return {
       ngModule: AbilityModule,
       providers: [
-        { provide: Ability, useFactory: createAbility },
+        {
+          provide: Ability,
+          useFactory: () => new Ability<Actions, Subjects, Conditions>([])
+        },
       ]
     };
   }
