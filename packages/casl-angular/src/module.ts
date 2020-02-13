@@ -16,9 +16,9 @@ const __metadata = m; // eslint-disable-line
 })
 export class AbilityModule {
   static forRoot<
-    Actions extends string,
-    Subjects extends Subject,
-    Conditions
+    Actions extends string = string,
+    Subjects extends Subject = Subject,
+    Conditions = object
   >(): ModuleWithProviders {
     return {
       ngModule: AbilityModule,
