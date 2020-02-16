@@ -19,7 +19,7 @@ export function createAbility() {
   ],
 })
 export class AbilityModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<AbilityModule> {
     return {
       ngModule: AbilityModule,
       providers: [
